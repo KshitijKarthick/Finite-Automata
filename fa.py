@@ -1,5 +1,5 @@
 #/bin/python2
-def dfa():
+def dfa(no_of_strings):
 	print "Enter total no of states:"
 	n=input()
 	print "Enter no of Alphabets valid in the Finite Automata:"
@@ -10,8 +10,8 @@ def dfa():
 	while i<no_of_symbols:
 		symbols.append(raw_input())
 		i=i+1
-	print "--------------------------------------------------------------\n"
-	print "\nInitial State is denoted by Q0:\n\n"
+	print "--------------------------------------------------------------"
+	print "\nInitial State is denoted by Q0:\n"
 	states=dict()
 	i=j=0
 	while i<n:
@@ -33,11 +33,13 @@ def dfa():
 		states['Q'+str(i)]=l
 		i=i+1
 	print "--------------------------------------------------------------\n"
-	print "Enter no of Strings to be processed:"
-	no_of_strings=input()
+	#print "Enter no of Strings to be processed:"
+	flag=1
+	#no_of_strings=input()
 	k=0
 	while k<no_of_strings:
-		print "\nEnter String to be processed:"
+		print "\n--------------------------------------------------------------\n"
+		print "\nEnter String",k+1,"to be processed:"
 		s=raw_input()
 		sum=0
 		i=0
@@ -55,10 +57,20 @@ def dfa():
 			q=(states[q])[symbols.index(ch)]
 			i=i+1
 		if states[q][no_of_symbols]==1:
-			print "String is accepeted by the DFA"
-			#return 1
+			print "\nString is accepted by the DFA"
 		else:
-			print "String is not accepted by the DFA"
-			#return 0
+			print "\nString is not accepted by the DFA"
+			flag=0
 		k=k+1
-dfa()
+	if flag==1:
+		print "\n-----------------------------------------------------------------------------------------------\n"
+		print "\nAll the Entered Strings of the Language consisting of the Symbols ",symbols," are accepted by the given Discrete Finite Automata"
+		print "\n-----------------------------------------------------------------------------------------------\n"
+		return 1
+	else:
+		print "\n-----------------------------------------------------------------------------------------------\n"
+		print "\nAll the Entered Strings of the Language consisting of the Symbols ",symbols," are not accepted by the given Discrete Finite Automata"
+		print "\n-----------------------------------------------------------------------------------------------\n"
+		return 0
+print "Enter no of Strings to be accepted:"
+dfa(input())
