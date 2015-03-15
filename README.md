@@ -23,19 +23,24 @@
     * All NFA's can be translated to equivalent DFA's using the subset construction algorithm.
     * Like DFAs, NFAs only recognize regular languages.
 
+
 ## Program Details :
 * The Program is written in Python.
 * The Program Constructs a DFA based on the user input, and inputs a number of strings of a particular language, validates the
   strings against the constructed DFA and tells if the DFA accepts the specific language or not.
 * Input is taken in the form of the Transition Table for that particular DFA.
 
+
 ### DFA Implementation :
-* Input the number of Strings to be validated against the DFA.
+* Input the String to be validated against the DFA.
 * Input total number of states present in the DFA [Q].
 * Input the number of Alphabets over which the DFA is valid [sigma].
 * Input all the valid symbols under sigma.
 * Input the Transition Table for all states defined over [Q0,Q1,Q2,Q3 ... QN]
   where n >= 0.
-* Input the Strings to be Validated and validate the following Strings against the constructed DFA.
+* Input the Strings to be Validated and validate the following String against the constructed DFA.
 * Output the Validation result for every String.
-* Ouput if all the Strings under the language is accepted or not. 
+* Ouput if all the Strings under the language is accepted or not.
+
+### ToDo
+* NFA Implementation
