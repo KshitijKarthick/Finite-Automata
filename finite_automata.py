@@ -90,9 +90,9 @@ class DeterministicFiniteAutomata():
             # Validate last state reached to be a Final State.
             return self.states[state]['Final']
         except KeyError:
-            return -1
+            return 0
         except ValueError:
-            return -1
+            return 0
 
 if __name__ == '__main__':
 
