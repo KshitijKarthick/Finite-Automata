@@ -23,13 +23,11 @@
     * All NFA's can be translated to equivalent DFA's using the subset construction algorithm.
     * Like DFAs, NFAs only recognize regular languages.
 
-
 ## Program Details :
 * The Program is written in Python.
-* The Program Constructs a DFA based on the user input, and inputs a number of strings of a particular language, validates the
-  strings against the constructed DFA and tells if the DFA accepts the specific language or not.
+* The Program Constructs a DFA based on the user input, and inputs a string of a particular language, validates the
+  string against the constructed DFA and tells if the DFA accepts the specific language or not.
 * Input is taken in the form of the Transition Table for that particular DFA.
-
 
 ### DFA Implementation :
 * Input the String to be validated against the DFA.
@@ -38,9 +36,33 @@
 * Input all the valid symbols under sigma.
 * Input the Transition Table for all states defined over [Q0,Q1,Q2,Q3 ... QN]
   where n >= 0.
-* Input the Strings to be Validated and validate the following String against the constructed DFA.
-* Output the Validation result for every String.
-* Ouput if all the Strings under the language is accepted or not.
+* Input the String to be Validated and validate the following String against the constructed DFA.
+* Output the Validation result for the String.
 
-### ToDo
+### Server Details :
+* Server written completely in Python, using Cherrypy, A lightweight, fast and stable Web Framework. 
+* Config
+  - host -> Host Id
+  - port -> Port no the Server listens during execution
+* /     -> renders the index.html page
+* /dfa  -> POST Request [payload -> JSON]
+  - Keys:
+    + no_of_states    -> Integer >=1
+    + no_of_symbols   -> Integer >=1
+    + string          -> String to be validated, defined over symbols*
+    + states          -> {[0:{'Transitions':[3,2,...], 'Final':1 or 0},....n]}
+    + symbols         -> [ symbol 1, symbol 2, ..]
+  - Response
+    + 1 -> String accepted by the Constructed DFA
+    + 0 -> String not accepted by the Constructed DFA
+
+## Todo
 * NFA Implementation
+* Clientside DFA Visualisation Development
+  * Parsing a string as i/p to construct the transition table taken as i/p.
+  * Development of Graphical representation of the DFA
+  * Validation of i/p string using the Server against the constructed DFA
+  * Development of transition table from the graphical representation.
+
+## Web Application Available at
+* https://murmuring-inlet-2528.herokuapp.com/
