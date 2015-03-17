@@ -77,22 +77,37 @@ class DeterministicFiniteAutomata():
         """
             Obtains a String from the user as i/p and the constructed DFA is checked against the input String.
             Arguments is the Constructed DFA, the valid symbols and total Strings given.
-            returns -1 for invalid i/p, returns 0 for language processing failure and returns 1 for the DFA accepting all the Strings.
+            returns JSON
+                Keys:
+                    'Valid'         :   Denotes 0/1 for Valid or Invalid String for the DFA.
+                    'Transitions'   :   Transitions Parsed for each letter in the String.
+                    'String'        :   String Parsed against the DFA.
         """
 
         # Initial Start State.
         state = 0
+        # Array of Individual transitions for each letter parsed as a String.
+        transitions = []
         try:
             # Individual String to be Processed, iterated through the constructed DFA.
             for letter in string:
+                initial_state = state
                 # Each symbol traverses from start state till the i/p ends.
                 state = (self.states[state]['Transitions'])[self.symbols.index(letter)]
+                transitions.append([initial_state, letter, state])
             # Validate last state reached to be a Final State.
-            return self.states[state]['Final']
-        except KeyError:
-            return 0
-        except ValueError:
-            return 0
+            return {
+                    'Valid'       : self.states[state]['Final'],
+                    'Transitions' : transitions,
+                    'String'      : string
+            }
+        # Invalid parsing of String against the DFA.
+        except (KeyError, ValueError) as e:
+            return {
+                    'Valid'       : 0,
+                    'Transitions' : transitions,
+                    'String'      : string
+            }
 
 if __name__ == '__main__':
 
