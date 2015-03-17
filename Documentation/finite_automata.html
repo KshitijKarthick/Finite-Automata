@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module finite_automata</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>finite_automata</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/kshitijkarthick/Programming/Python/Finite-Automata/finite_automata.py">/home/kshitijkarthick/Programming/Python/Finite-Automata/finite_automata.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="finite_automata.html#DeterministicFiniteAutomata">DeterministicFiniteAutomata</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DeterministicFiniteAutomata">class <strong>DeterministicFiniteAutomata</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;Class&nbsp;obtains&nbsp;the&nbsp;string&nbsp;and&nbsp;constructs&nbsp;the&nbsp;DFA&nbsp;by&nbsp;the&nbsp;constructor<br>
+and&nbsp;Validates&nbsp;the&nbsp;string&nbsp;for&nbsp;the&nbsp;Lanaguage&nbsp;by&nbsp;validate_Dfa()&nbsp;method<br>
+returns&nbsp;1&nbsp;if&nbsp;the&nbsp;String&nbsp;is&nbsp;completely&nbsp;accepted&nbsp;by&nbsp;the&nbsp;constructed&nbsp;DFA.<br>
+returns&nbsp;0&nbsp;if&nbsp;the&nbsp;String&nbsp;is&nbsp;not&nbsp;completely&nbsp;accepted&nbsp;by&nbsp;the&nbsp;constructed&nbsp;DFA.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DeterministicFiniteAutomata-__init__"><strong>__init__</strong></a>(self, no_of_symbols<font color="#909090">=0</font>, no_of_states<font color="#909090">=0</font>, states<font color="#909090">=None</font>, symbols<font color="#909090">=None</font>)</dt><dd><tt>Parameters(&nbsp;no_of_symbols,&nbsp;no_of_states,&nbsp;states,&nbsp;symbols)<br>
+no_of_symbols&nbsp;-&gt;&nbsp;No&nbsp;of&nbsp;Symbols&nbsp;in&nbsp;Sigma<br>
+no_of_states&nbsp;-&gt;&nbsp;No&nbsp;of&nbsp;states&nbsp;in&nbsp;the&nbsp;DFA<br>
+states&nbsp;-&gt;&nbsp;{['state':{'Transitions':[3,2,...],&nbsp;'Final':1},....]}<br>
+symbols&nbsp;-&gt;&nbsp;[&nbsp;symbol&nbsp;1,&nbsp;symbol&nbsp;2,&nbsp;..]</tt></dd></dl>
+
+<dl><dt><a name="DeterministicFiniteAutomata-validate_dfa"><strong>validate_dfa</strong></a>(self, string)</dt><dd><tt>Obtains&nbsp;a&nbsp;String&nbsp;from&nbsp;the&nbsp;user&nbsp;as&nbsp;i/p&nbsp;and&nbsp;the&nbsp;constructed&nbsp;DFA&nbsp;is&nbsp;checked&nbsp;against&nbsp;the&nbsp;input&nbsp;String.<br>
+Arguments&nbsp;is&nbsp;the&nbsp;Constructed&nbsp;DFA,&nbsp;the&nbsp;valid&nbsp;symbols&nbsp;and&nbsp;total&nbsp;Strings&nbsp;given.<br>
+returns&nbsp;JSON<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Keys:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Valid'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Denotes&nbsp;0/1&nbsp;for&nbsp;Valid&nbsp;or&nbsp;Invalid&nbsp;String&nbsp;for&nbsp;the&nbsp;DFA.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Transitions'&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Transitions&nbsp;Parsed&nbsp;for&nbsp;each&nbsp;letter&nbsp;in&nbsp;the&nbsp;String.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'String'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;String&nbsp;Parsed&nbsp;against&nbsp;the&nbsp;DFA.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>no_of_states</strong> = 0</dl>
+
+<dl><dt><strong>no_of_symbols</strong> = 0</dl>
+
+<dl><dt><strong>states</strong> = None</dl>
+
+<dl><dt><strong>symbols</strong> = None</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
