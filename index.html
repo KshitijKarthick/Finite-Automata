@@ -5,6 +5,8 @@
 	 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Finite Automata Visualisation</title>
 		<script src ="resources/libraries/jquery.min.js"></script>
+		<script src="resources/bower_components/webcomponentsjs/webcomponents.js"></script>
+		<link rel="import" href="resources/bower_components/paper-toast/paper-toast.html">
 	</head>
 	<body>
 		<div id="div1">
@@ -18,7 +20,8 @@
 		<div id="div6"></div>
 		<table id="trans_table"></table>
 		<div id="div7"></div>
+		<paper-toast id="output_box" autoCloseDisabled="true" duration="6000"></paper-toast>
+		<script src="resources/js/main.js"></script>
+		<script src="resources/js/parser.js"></script>
 	</body>
-	<script src="resources/js/main.js"></script>
-	<script src="resources/js/parser.js"></script>
 </html>

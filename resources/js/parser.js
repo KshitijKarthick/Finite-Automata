@@ -26,17 +26,24 @@ function jsonGenerator(states_list,symbol_list,transition_list,final_states_list
 	}
 	return sending_json;
 }
+
+function transitionsGenerator(transitions){
+	var a=[];
+	for (var i = 0; i < transitions.length; i++) {
+		a.push(transitions[i][0]+"+"+transitions[i][1]+"->"+transitions[i][2]);
+	}
+	return a;
+}
+
 function displayOutput(reply){
-	console.log(reply);
-/*
 	if(reply.Valid!==1){
 		$('#output_box').attr('text',"String not valid");
 	}
 	else{
-		$('#output_box').attr('text',[reply.Transitions]);
+		var output=transitionsGenerator(reply.Transitions);
+		$('#output_box').attr('text',output);
 	}
 	output_box.show();
-*/
 }
 // Sends the json and returns the validity and transitions made 
 function validator(json){
