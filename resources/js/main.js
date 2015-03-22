@@ -164,4 +164,7 @@ $('#div7').on('click','#btn_tab',function(){
 			return;
 		}
 	$('#btn_tab').toggle();
+	var string_to_check = "ababab";
+	var generated_json=jsonGenerator(valid_states,alpha,transition_list,final_states,string_to_check);
+	validator(generated_json);
 });
