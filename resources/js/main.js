@@ -9,6 +9,7 @@ var transition_list=[];
 var valid_states=[];
 var no_fin;
 var final_states;
+var string_to_check;
 function make_table(){
 	var table=$("#trans_table");
 	var row2add="";
@@ -163,8 +164,16 @@ $('#div7').on('click','#btn_tab',function(){
 			transition_list=[];
 			return;
 		}
-	$('#btn_tab').toggle();
-	var string_to_check = "ababab";
+	$('#btn_tab').hide();
+		var m1=$('<input type="text" id="inp_string"/>');
+		var n1=$('<button id="btn_input_string" value="generate new element">submit</button>');
+		$('#div8').append("Enter the string to be validated");
+		$('#div8').append(m1);
+		$('#div8').append(n1);
+	});
+	$('#div8').on('click','#btn_input_string',function(){
+		$('#btn_input_string').hide();
+		string_to_check=$('#inp_string').val();
 	var generated_json=jsonGenerator(valid_states,alpha,transition_list,final_states,string_to_check);
 	validator(generated_json);
 });
