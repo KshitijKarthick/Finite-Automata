@@ -1,28 +1,93 @@
-<!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
-	 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Finite Automata Visualisation</title>
-		<script src ="resources/libraries/jquery.min.js"></script>
+		<title>DSL for DFA</title>
 		<script src="resources/bower_components/webcomponentsjs/webcomponents.js"></script>
-		<link rel="import" href="resources/bower_components/paper-toast/paper-toast.html">
+		<link rel="import" href="resources/bower_components/paper-input/paper-autogrow-textarea.html">
+  		<link rel="import" href="resources/bower_components/paper-button/paper-button.html">
+  		<link rel="import" href="resources/bower_components/paper-toast/paper-toast.html">
+  		<link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+  		<script src="resources/libraries/jquery.min.js"></script>
+  		<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+  		<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="resources/libraries/joint.min.css">
+  		<script src="resources/libraries/joint.min.js"></script>
+  		<script src="resources/libraries/joint.shapes.fsa.min.js"></script>
 	</head>
 	<body>
-		<div id="div1">
-				Enter the number of states:<input type="number" id="no_states"></input>
-			<button id="btn_states">submit</button>
-		</div>
-		<div id="div2"></div>
-		<div id="div3"></div>
-		<div id="div4"></div>
-		<div id="div5"></div>
-		<div id="div6"></div>
-		<table id="trans_table"></table>
-		<div id="div7"></div>
-		<div id="div8"></div>
-		<paper-toast id="output_box" autoCloseDisabled="true" duration="6000"></paper-toast>
-		<script src="resources/js/main.js"></script>
-		<script src="resources/js/parser.js"></script>
+		<style>
+			html,body,#main_div{
+				width:100%;
+				height: 100%;
+				padding: 0px;
+			}
+
+
+			#outer_area{
+				width: 100%;
+			}
+			#input_area{
+				padding:20px; 
+				background: #009688;
+				color: white;
+				font-size: 22px;
+				border: solid white 1px;
+				border-radius: 35px;
+			}
+			#submit-button{
+				background: #FF5722;
+				color: #FFFFFF;
+				border: solid #FF5722 2px;
+				border-radius: 15px;
+				font-size: 20px;
+				min-width: 200px;
+				font-family: 'Denk One', sans-serif;
+				max-height: 55px;
+			}
+
+			#submit-button:hover {
+				opacity: 0.8;
+			}
+			#input_div{
+				text-align: center;
+				padding-left: 30px;
+				padding-right: 10px;
+				padding-bottom: 10px;
+				height: 90%;
+				//border: solid black 2px;
+			}
+			#svg_div{
+				padding-top: 10px;
+				border: solid #673ab7 4px;
+				border-radius: 35px;
+				width: 100%;
+				height: 87%;
+			}
+			#svg_container{
+				//border: solid black 2px;
+			}
+			#header {
+				text-align: center;
+				font-size: 35px;
+				color: white;
+				font-family: 'Denk One', sans-serif;
+			}
+		</style>
+		<div id="header" class="navbar navbar-inverse">DFA REPRESENTATION</div>
+		<div id="main_div" class="container-fluid row">
+			<div id="input_div" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			    <paper-autogrow-textarea id="outer_area" rows="25" maxRows="25">
+			        <textarea id="input_area"></textarea>
+			    </paper-autogrow-textarea><br><br>
+		   		<paper-button id="submit-button" raised role="button" class="colored" tabindex="0">Submit</paper-button>
+	   		</div>
+	   		<div id="svg_container" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	   			<div id="svg_div">
+	   			</div>
+	   		</div>
+	   	</div>
+	   	<paper-toast id="output_box" autoCloseDisabled="true" duration="6000"></paper-toast>
+	   	<script src="resources/js/parser.js"></script>
+	   	<script src="resources/js/jointdemo.js"></script>
+	   	<script src="resources/js/main.js"></script>
 	</body>
 </html>
